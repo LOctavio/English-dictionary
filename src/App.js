@@ -1,19 +1,11 @@
 import './App.css';
-import axios from 'axios';
 import React, { useState } from 'react';
 import { FormControl, InputGroup, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 function App() {
-  const [definition, setDefinition] = useState();
   const [input, setInput] = useState('');
   const navigate = useNavigate();
-
-  const getDefinition = async (text) => {
-    const response = await axios(`https://api.dictionaryapi.dev/api/v2/entries/en/${text}`);
-    setDefinition(response.data);
-     console.log(definition);
-  };
 
   return (
     <>
